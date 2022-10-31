@@ -25,11 +25,19 @@ public class Wolf : MonoBehaviour
         audioClp = audioSrc.clip;
     }
 
-private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-      if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             anim.SetBool(animtionParamater, true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            anim.SetBool(animtionParamater, false);
         }
     }
 
